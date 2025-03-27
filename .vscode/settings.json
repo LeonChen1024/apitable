@@ -101,4 +101,11 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "typescript.enablePromptUseWorkspaceTsdk": true,
+  "i18n-ally.localesPaths": [
+    "packages/core/src/exports/i18n",
+    "packages/datasheet/public/file/langs",
+    "packages/datasheet/src/modules/shared/i18n",
+    "backend-server/application/src/main/resources/sysconfig/i18n",
+    "backend-server/application/src/main/java/com/apitable/shared/sysconfig/i18n"
+  ],
 }

@@ -85,6 +85,7 @@ import '../src/widget-stage/index.less';
 import '../src/widget-stage/main/main.less';
 import { getInitialProps } from '../utils/get_initial_props';
 
+// immer 启用 map 和 set 设置
 enableMapSet();
 
 const RouterProvider = dynamic(() => import('pc/components/route_manager/router_provider'), { ssr: true });
@@ -96,7 +97,7 @@ export interface IUserInfoError {
   code: number;
   message: string;
 }
-
+// TODO: worker 学习
 const initWorker = async () => {
   const comlinkStore = await initWorkerStore();
   // Initialization functions
@@ -109,7 +110,9 @@ const initWorker = async () => {
     console.log('web assembly is not supported');
   }
 };
+
 immer.setAutoFreeze(false);
+
 (() => {
   if (!process.env.SSR) {
     console.log('start init web');

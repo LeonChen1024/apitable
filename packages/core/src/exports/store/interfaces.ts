@@ -65,6 +65,9 @@ export * from '../../modules/database/store/interfaces/preview_file';
 export * from '../../modules/embed/store/interfaces/embed';
 export * from '../../modules/billing/store/interfaces';
 
+/**
+ * 全局状态类型
+ */
 export interface IReduxState {
 
   // a mark that indicates `state` is root
