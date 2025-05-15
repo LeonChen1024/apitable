@@ -140,11 +140,20 @@ function MyAppMain({ Component, pageProps, envVars }: AppProps & { envVars: stri
   const router = useRouter();
   const env = JSON.parse(envVars);
   const [loading, setLoading] = useState(() => {
+    // widget-stage 应该是 APITable 的组件开发环境或预览环境，主要用于：
+    // 组件开发与测试：提供独立的环境来开发和测试自定义组件（widget）
+    // 组件渲染平台：是一个轻量级的渲染引擎，专门用于显示和运行组件
+    // 技术特点
+    // 从代码实现来看：
+    // 独立渲染流程：当检测到路径包含 widget-stage 时，它会绕过普通的应用初始化流程
+    // 轻量级设计：不会加载应用的主要部分，而是直接渲染组件
+    // 特殊路由处理：拥有自己的路由逻辑和渲染流程
     if (router.asPath.includes('widget-stage')) {
       return LoadingStatus.Complete;
     }
     return LoadingStatus.None;
   });
+
   const [userData, setUserData] = useState<IUserInfo | null>(null);
   const [userLoading, setUserLoading] = useState(true);
   useEffect(() => {

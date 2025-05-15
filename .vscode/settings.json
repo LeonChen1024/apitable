@@ -108,4 +108,5 @@
     "backend-server/application/src/main/resources/sysconfig/i18n",
     "backend-server/application/src/main/java/com/apitable/shared/sysconfig/i18n"
   ],
+  "nxConsole.generateAiAgentRules": true,
 }
